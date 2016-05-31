@@ -1,6 +1,6 @@
 in_thread do
   loop do
-    play scale(:Eb2, :major, num_octaves: 1).choose, release: 0.4, amp: rrand(0.6, 0.9)
+    play scale(:Eb2, :major, num_octaves: 1).choose, release: 0.4, amp: rrand(0.2, 0.6)
     sleep 0.25
   end
 end
@@ -10,19 +10,19 @@ with_fx :distortion, mix: 0.1 do
     with_fx :reverb, mix: 0.8 do
       in_thread do
         loop do
-          play scale(:Eb4, :major, num_octaves: 1)[1], release: 1, amp: 0.2
+          play scale(:Eb4, :major, num_octaves: 1)[1], amp: 0.2, sustain: 1.1
           sleep 4.0
 
-          play scale(:Eb4, :major, num_octaves: 1)[2], release: 1, amp: 0.2
+          play scale(:Eb4, :major, num_octaves: 1)[2], amp: 0.2, sustain: 1.1
           sleep 4.0
 
-          play scale(:F4, :melodic_minor, num_octaves: 1)[3], release: 1, amp: 0.2
+          play scale(:F4, :melodic_minor, num_octaves: 1)[3], amp: 0.2, sustain: 1.1
           sleep 2.0
 
-          play scale(:Bb3, :mixolydian, num_octaves: 1)[6], release: 1, amp: 0.2
+          play scale(:Bb3, :mixolydian, num_octaves: 1)[6], amp: 0.2, sustain: 1.1
           sleep 2.0
 
-          play scale(:Eb4, :major, num_octaves: 1)[7], release: 1, amp: 0.2
+          play scale(:Eb4, :major, num_octaves: 1)[7], amp: 0.2, sustain: 1.1
           sleep 4.0
         end
       end
@@ -34,19 +34,19 @@ with_fx :echo, mix: 0.8 do |w|
   with_fx :reverb, mix: 0.4 do
     in_thread do
       loop do
-        play chord(:Eb3, :major7)
+        play chord(:Eb3, :major7), sustain: 1.1
         sleep 4.0
 
-        play chord(:Eb3, :maj9)
+        play chord(:Eb3, :maj9), sustain: 1.1
         sleep 4.0
 
-        play chord(:F3,:m7)
+        play chord(:F3,:m7), sustain: 1.1
         sleep 2.0
 
-        play chord(:Bb3, '7')
+        play chord(:Bb3, '7'), sustain: 1.1
         sleep 2.0
 
-        play chord(:Eb3, :major7)
+        play chord(:Eb3, :major7), sustain: 1.1
         sleep 4.0
       end
     end
