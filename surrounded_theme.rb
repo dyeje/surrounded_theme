@@ -5,26 +5,24 @@ in_thread do
   end
 end
 
-with_fx :distortion, mix: 0.1 do
-  with_fx :echo, mix: 1.0 do
-    with_fx :reverb, mix: 0.8 do
-      in_thread do
-        loop do
-          play scale(:Eb4, :major, num_octaves: 1)[1], amp: 0.2, sustain: 1.1
-          sleep 4.0
+with_fx :echo, mix: 1.0 do
+  with_fx :reverb, mix: 0.8 do
+    in_thread do
+      loop do
+        play scale(:Eb4, :major, num_octaves: 1)[1], amp: 0.2, sustain: 1.1
+        sleep 4.0
 
-          play scale(:Eb4, :major, num_octaves: 1)[2], amp: 0.2, sustain: 1.1
-          sleep 4.0
+        play scale(:Eb4, :major, num_octaves: 1)[2], amp: 0.2, sustain: 1.1
+        sleep 4.0
 
-          play scale(:F4, :melodic_minor, num_octaves: 1)[3], amp: 0.2, sustain: 1.1
-          sleep 2.0
+        play scale(:F4, :melodic_minor, num_octaves: 1)[3], amp: 0.2, sustain: 1.1
+        sleep 2.0
 
-          play scale(:Bb3, :mixolydian, num_octaves: 1)[6], amp: 0.2, sustain: 1.1
-          sleep 2.0
+        play scale(:Bb3, :mixolydian, num_octaves: 1)[6], amp: 0.2, sustain: 1.1
+        sleep 2.0
 
-          play scale(:Eb4, :major, num_octaves: 1)[7], amp: 0.2, sustain: 1.1
-          sleep 4.0
-        end
+        play scale(:Eb4, :major, num_octaves: 1)[7], amp: 0.2, sustain: 1.1
+        sleep 4.0
       end
     end
   end
@@ -54,7 +52,7 @@ with_fx :echo, mix: 0.8 do |w|
 end
 
 with_fx :echo, mix: 0.3 do |w|
-  with_fx :reverb, mix: 0.6 do |w|
+  with_fx :reverb, mix: 0.5 do |w|
     with_fx :wobble, mix: 0.3 do |w|
       loop do
         3.times do
